@@ -78,10 +78,20 @@ h3 {
 	margin:	1.5em 0 0 0;
 	padding:		0;
 }
+
+h5 {
+	font-weight: 	500;
+	color: 			#4D4D4D;
+	margin:	1.5em 0 0 0;
+	padding:		1em 0.2em 0.2em 0.2em;
+	background-color: #75E2FD;
+}
+
 h1 { font-size: 3.0em; color: red; text-transform: uppercase;}
 h2 { font-size: 2.0em; }
 h3 { font-size: 1.4em; }
 h4 { font-size: 1.1em; }
+h5 { font-size: 1.0em; }
 
 header h2, 
 header h3, 
