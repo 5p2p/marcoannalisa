@@ -2,96 +2,81 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Il matrimonio di {{page.title}}</title>
+	<title>Il matrimonio di {{ page.title }}</title>
 
 
 	<!-- FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Raleway:300,500' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 
 	<!-- CSS -->
-    <link href='css/singlepage.css' rel='stylesheet' type='text/css'>
+    <link href='css/page.css' rel='stylesheet' type='text/css'>
 
 	<!-- JS -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="js/jquery.waitforimages.min.js"></script>
+	<script src="js/jquery.unveil.min.js"></script>
+
 
 </head>
 
 <body>
 	
-
-	<section id='main'> 
+	
+	<section id='container'>
 		
-		<header class=center><img src="{{ page.img }}">
-		<h1>{{ page.title }}</h1>
-		<h2> {{ page.subheader }} </h2>
-		<h3> {{ page.data }} </h3>
-		<h4> {{ page.luogo }}</h4>
+		<header class='center'>
+			
+			<!img src="{{ page.img }}">		
+		
+			<h1> {{ page.title }}</h1>
+			<h2> {{ page.subheader }} </h2>
+			<h3> {{ page.data }} </h3>
+			<h4> {{ page.luogo }}</h4>
+		
 		</header>
 
 
-		<section id='testo'>
-
-			{{ content }}
+		
+		<section id='gallery' class='center'>	
+			<section id='pictures' class='center shadow'>	
+		
+				{{ content }}
 		
 
+			</section>
+		
+	
+	
+		<footer>
+		
 			<hr>
-
-			<h5>Lascia un commento!</h5><br>
-
-			{% include disqus.html %}
-
-		</section>
-
-
-
-
-	<footer>
+		
 		
 		<p>
-	<img alt="5pani2pesci" src="img/logo.png">
-	Questa pagina ed il servizio fotografico per il giorno del matrimonio sono realizzati da <a href="http://5p2p.it">5pani2pesci</a>, un progetto di evangelizzazione per la famiglia attraverso lo sviluppo di video, articoli e testimonianze. Tutto il ricavato ottenuto con i servizi fotografici ai matrimoni è finalizzato al finanziamento di questa attività. 
-</p>
+			<img alt="5pani2pesci" src="img/logo.png"> Questo servizio fotografico è stato realizzato da
+			<a href="http://5p2p.it">5pani2pesci</a>, un progetto di evangelizzazione per la famiglia.  La nostra attività include lo sviluppo di video, articoli e testimonianze. Tutto il ricavato ottenuto attraverso i servizi fotografici ai matrimoni è finalizzato al finanziamento di questi progetti. 
+		</p>
 	
 	<p>
-		Vienici a conoscere <a href="http://5p2p.it"> sul nostro sito</a> oppure <a href="http://5p2p.it/scrivici.html">scrivici per avere maggiori informazioni</a>.</p>
+		Vienici a conoscere <a href="http://5p2p.it"> sul nostro blog</a> oppure <a href="http://5p2p.it/scrivici.html">scrivici per avere maggiori informazioni</a>.</p>
 </footer>
 
-    <script>
-	
-	var $container = $('#gallery')
-	
-	$container.imagesLoaded( function(){
-	$container.isotope({
-	  itemSelector : '.photo',
-	  layoutMode : 'masonry'
-	});
-});
-	
-	$(window).smartresize(function(){
-  	  $container.isotope();
-		
-	});
-    </script>
+</section>
+
+
+
+</section>
 
     <script>
+
 	$(document).ready(function() {
-		$(".fancybox").fancybox({
-			openEffect	: 'none',
-			closeEffect	: 'none'
-		});
+	  $("img").unveil();
 	});
-    </script>
-	
-	<script>
-	('body').waitForImages({
-	waitForAll: true,
-	finished: function() {
-	// All images have loaded.
-	} 
-	});
+
 	</script>
 
+	
+	
 	
 </body>
 
